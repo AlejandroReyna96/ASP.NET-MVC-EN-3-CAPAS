@@ -26,12 +26,6 @@ namespace WEB_PROYECTOS.Controllers
         [HttpPost] // Cuando envío información desde el cliente al servidor
         public ActionResult Crear(Departamento departamento)
         {
-            //if(departamento.NombreDepartamento == null)
-            //{
-            //    ModelState.AddModelError("", "Nombre de Departamento vacío");
-            //    return View(departamento);
-            //}
-
             try
             {
                 DepartamentoCN.Agregar(departamento);
@@ -41,9 +35,19 @@ namespace WEB_PROYECTOS.Controllers
             {
                 ModelState.AddModelError("", "Ocurrió un error al Agregar un Departamento");
                 return View(departamento);
-            }
-            
+            }   
         }
 
+        public ActionResult Detail(int id)
+        {
+            var depertamento = DepartamentoCN.Detail(id);
+            return View(depertamento);
+        }
+
+        public ActionResult Editar(int id)
+        {
+            var departamento = DepartamentoCN.Detail(id);
+            return View(departamento);
+        }
     }
 }

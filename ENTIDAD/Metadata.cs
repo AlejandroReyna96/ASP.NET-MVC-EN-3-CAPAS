@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ENTIDAD
 {
     public class DepartamentoMetadata
     { 
         [Required]
-        [MinLength(5)]
-        [MaxLength(10)]
+        [MinLength(3)]
+        [MaxLength(150)]
         [Display(Name = "Nombre del Departamentoo")]
         public string NombreDepartamento { get; set; }
     }
-
-
 }

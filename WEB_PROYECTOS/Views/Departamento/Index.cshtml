@@ -13,7 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NombreDepartamento)
+            Nombre de Departamento
         </th>
         <th></th>
     </tr>
@@ -24,9 +24,9 @@
             @Html.DisplayFor(modelItem => item.NombreDepartamento)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DepartamentoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DepartamentoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DepartamentoId })
+            @Html.ActionLink("Editar", "Editar", new { id=item.DepartamentoId }) |
+            @Html.ActionLink("Detalles", "Detail", new { id=item.DepartamentoId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.DepartamentoId })
         </td>
     </tr>
 }

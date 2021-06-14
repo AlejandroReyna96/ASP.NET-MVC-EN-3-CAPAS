@@ -10,7 +10,7 @@ namespace NEGOCIO
 {
     public class DepartamentoCN
     {
-        private static DepartamentoDALC obj = new DepartamentoDALC(); 
+        private static DepartamentoDALC obj = new DepartamentoDALC();
         public static List<Departamento> ListarDepartamentos()
         {
             return obj.ListarDepartamentos();
@@ -19,6 +19,16 @@ namespace NEGOCIO
         public static void Agregar(Departamento departamento)
         {
             obj.Agregar(departamento);
+        }
+
+        public static Departamento Detail(int id)
+        {
+            return obj.Detail(id);
+        }
+
+        public static void Editar(Departamento departamento)
+        {
+            obj.Editar(departamento);
         }
     }
 }
