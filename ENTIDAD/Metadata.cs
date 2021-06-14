@@ -12,7 +12,7 @@ namespace ENTIDAD
         [Required]
         [MinLength(5)]
         [MaxLength(10)]
-        [Display(Name = "Nombre del Departamento")]
+        [Display(Name = "Nombre del Departamentoo")]
         public string NombreDepartamento { get; set; }
     }
 
