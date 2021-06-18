@@ -1,9 +1,7 @@
 ﻿using ENTIDAD;
 using NEGOCIO;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Net;
 using System.Web.Mvc;
 
 namespace WEB_PROYECTOS.Controllers
@@ -24,6 +22,7 @@ namespace WEB_PROYECTOS.Controllers
         }
 
         [HttpPost] // Cuando envío información desde el cliente al servidor
+        [ValidateAntiForgeryToken]
         public ActionResult Crear(Departamento departamento)
         {
             try
@@ -49,5 +48,47 @@ namespace WEB_PROYECTOS.Controllers
             var departamento = DepartamentoCN.Detail(id);
             return View(departamento);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Editar(Departamento departamento)
+        {
+            try
+            {
+                DepartamentoCN.Editar(departamento);
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("", "Ocurrió un error al Editar el Departamento");
+                return View(departamento);
+            }
+        }
+
+        public ActionResult Eliminar(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var departamento = DepartamentoCN.Detail(id.Value);
+            return View(departamento);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Eliminar(int id)
+        {
+            try
+            {
+                DepartamentoCN.Eliminar(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("", "Ocurrió un error al Eliminar el Departamento");
+                return View(); // retornar la misma vista
+            }
+        }
+
     }
 }

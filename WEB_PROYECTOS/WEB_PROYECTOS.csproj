@@ -171,6 +171,7 @@
     <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,6 +190,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="javascript\index.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -240,6 +242,9 @@
     <Content Include="Views\Departamento\Crear.cshtml" />
     <Content Include="Views\Departamento\Detail.cshtml" />
     <Content Include="Views\Departamento\Editar.cshtml" />
+    <Content Include="Views\Departamento\Eliminar.cshtml" />
+    <Content Include="Views\Proyecto\Index.cshtml" />
+    <Content Include="Views\Proyecto\Crear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

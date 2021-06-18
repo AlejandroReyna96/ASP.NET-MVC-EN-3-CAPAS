@@ -40,8 +40,20 @@ namespace DATOS
             {
                 var departamentoNuevo = db.Departamento.Find(departamento.DepartamentoId);
 
-                departamentoNuevo.NombreDepartamento = departamento.NombreDepartamento;
-                db.SaveChanges();     
+                if(departamentoNuevo != null)
+                    departamentoNuevo.NombreDepartamento = departamento.NombreDepartamento;
+                    db.SaveChanges();
+
+            }
+        }
+
+        public void Eliminar(int id)
+        {
+            using(var db = new ProyectosDBEntities())
+            {
+                var departamento = db.Departamento.Find(id);
+                db.Departamento.Remove(departamento);
+                db.SaveChanges();
             }
         }
 

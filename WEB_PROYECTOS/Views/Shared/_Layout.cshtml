@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @*<link rel="stylesheet" href="https://cdn.dhtmlx.com/edge/dhtmlx.css" type="text/css">*@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,8 +22,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <!-- Texto, Acción, Controlador  -->
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Departamentos", "Index", "Departamento")</li>
+                    <li>@Html.ActionLink("Proyectos", "Index", "Proyecto")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -41,5 +43,26 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    @*<script src="https://cdn.dhtmlx.com/edge/dhtmlx.js" type="text/javascript"></script>.
+    <script src="~/javascript/index.js"></script>*@
+
+    <script>
+        $(document).ready(function () {
+        /*    console.log("Prueba");*/
+            //var myWins = new dhtmlXWindows();
+           
+            //var win = myWins.createWindow("Ventana1", 1, 200, 1150, 800);
+
+            //myWins.window("Ventana1").setText("Proyectos WEB");
+
+            //myWins.window("Ventana1").denyResize();
+
+            //myWins.window("Ventana1").attachURL("https://localhost:44393/");
+
+        });
+
+
+
+    </script>
 </body>
 </html>

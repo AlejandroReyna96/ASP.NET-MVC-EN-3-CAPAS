@@ -1,16 +1,14 @@
 ﻿using DATOS;
 using ENTIDAD;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NEGOCIO
 {
     public class DepartamentoCN
     {
         private static DepartamentoDALC obj = new DepartamentoDALC();
+
+
         public static List<Departamento> ListarDepartamentos()
         {
             return obj.ListarDepartamentos();
@@ -28,7 +26,15 @@ namespace NEGOCIO
 
         public static void Editar(Departamento departamento)
         {
-            obj.Editar(departamento);
+            if(departamento != null)
+                obj.Editar(departamento);
+
+
+        }
+
+        public static void Eliminar(int id)
+        {
+            obj.Eliminar(id);
         }
     }
 }
