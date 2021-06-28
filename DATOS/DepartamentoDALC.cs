@@ -42,8 +42,7 @@ namespace DATOS
 
                 if(departamentoNuevo != null)
                     departamentoNuevo.NombreDepartamento = departamento.NombreDepartamento;
-                    db.SaveChanges();
-
+                db.SaveChanges();
             }
         }
 
@@ -56,6 +55,5 @@ namespace DATOS
                 db.SaveChanges();
             }
         }
-
     }
 }

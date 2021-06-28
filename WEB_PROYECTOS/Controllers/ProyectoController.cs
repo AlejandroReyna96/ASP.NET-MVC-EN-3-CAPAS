@@ -28,13 +28,18 @@ namespace WEB_PROYECTOS.Controllers
         {
             try
             {
+                if(proyecto.NombreProyecto == null)
+                    return Json(new { ok = false, toRedirect = "Debe ingresar el nombre del proyecto" }, JsonRequestBehavior.AllowGet);
+
                 ProyectoCN.Agregar(proyecto);
-                return RedirectToAction("Index");
+                return Json(new { ok = true, toRedirect = "Index" }, JsonRequestBehavior.AllowGet);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                ModelState.AddModelError("", "Ocurrió un error al agregar un Proyecto");
-                return View();
+                return Json(new { ok = false, msj = ex.Message }, JsonRequestBehavior.AllowGet);
+                //ModelState.AddModelError("", "Ocurrió un error al agregar un Proyecto");
+                //return View();
+
             }
         }
 

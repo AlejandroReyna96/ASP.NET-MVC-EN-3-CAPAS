@@ -66,11 +66,13 @@
                 data: form_data
             }).done(function (response) {
                 console.log(response);
-                alert("Proceso ejecutado correctamente");
-                window.location = response.toRedirect;
+                if (response.ok) {
+                    alert("Proyecto creado correctamente");
+                    window.location = response.toRedirect;
+                } else {
+                    alert(response.msj);
+                }
             }).fail(function (jqXHR, textStatus, errorThrown) {
-
-
             });
         });
     </script>

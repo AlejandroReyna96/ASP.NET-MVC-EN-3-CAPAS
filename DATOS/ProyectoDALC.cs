@@ -9,7 +9,6 @@ namespace DATOS
 {
     public class ProyectoDALC // usar "repositorio"
     {
-
         public List<Proyecto> ListarProyectos()
         {
             using(var db = new ProyectosDBEntities())
@@ -27,8 +26,5 @@ namespace DATOS
                 return true;
             }
         }
-
-
-
     }
 }
